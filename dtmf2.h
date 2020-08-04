@@ -46,7 +46,7 @@ void loop()
   }
 }
  
-void playDTMF(byte digit, byte duration){
+void playDTMF2(byte digit, byte duration){
   boolean tone1state=false;
   boolean tone2state=false;
   int tone1delay=(500000/DTMF[digit][0])-10; // calculate delay (in microseconds) for tone 1 (half of the period of one cycle). 10 is a fudge factor to raise the frequency due to sluggish timing.
@@ -74,7 +74,7 @@ void playDTMF(byte digit, byte duration){
   }
 }
  
-void dialNumber(byte number[],byte len){
+void dialNumber2(byte number[],byte len){
   for(int i=0;i<len;i++){
     playDTMF(number[i], 100);  // 100 msec duration of tone
     delay(100); // 100 msec pause between tones
